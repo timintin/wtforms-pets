@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Add a Pet</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+        </p>
+        <p>
+            {{ form.species.label }}<br>
+            {{ form.species() }}
+        </p>
+        <p>
+            {{ form.photo_url.label }}<br>
+            {{ form.photo_url(size=64) }}
+        </p>
+        <p>
+            {{ form.age.label }}<br>
+            {{ form.age() }}
+        </p>
+        <p>
+            {{ form.notes.label }}<br>
+            {{ form.notes(rows=5, cols=32) }}
+        </p>
+        <p><button type="submit">Add Pet</button></p>
+    </form>
+{% endblock %}
